@@ -1,0 +1,17 @@
+<div id="lastSunday"></div>
+
+<script>
+    var now = new Date();
+    var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var lastSunday = new Date(today.setDate(today.getDate() - today.getDay()));
+
+    var month = MakeTwoDigits(lastSunday.getMonth() + 1);
+    var day = MakeTwoDigits(lastSunday.getDate());
+    var dateString = month + "/" + day + "/" + lastSunday.getFullYear();
+
+    document.getElementById('lastSunday').innerHTML = dateString;
+    
+    function MakeTwoDigits(number) {
+        return ("0" + number).slice(-2);
+    }
+</script>
